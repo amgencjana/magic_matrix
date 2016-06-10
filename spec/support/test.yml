@@ -1,0 +1,6 @@
+next_action:
+  lef:
+    generic:
+      ver_a: [ 'call', 'msg' ]
+      ver_b: [ 'xxx', 'yyy' ]
+    funnel:  [ 'zzz', 'ccc' ]
