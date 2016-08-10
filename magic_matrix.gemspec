@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.2.0"
   s.add_dependency "activesupport", "~> 4.2.0"
-
+  s.add_development_dependency "pry",  "~> 0.10"
 end
