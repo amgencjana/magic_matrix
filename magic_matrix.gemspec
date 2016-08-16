@@ -1,4 +1,6 @@
-$:.push File.expand_path("../lib", __FILE__)
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 # Maintain your gem's version:
 require "magic_matrix/version"
@@ -14,10 +16,11 @@ Gem::Specification.new do |s|
   s.description = " Description of MagicMatrix."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["spec/**/*"]
+  s.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  s.require_paths = ["lib"]
 
-  s.add_dependency "rails", "~> 4.2.0"
-  s.add_dependency "activesupport", "~> 4.2.0"
-  s.add_development_dependency "pry",  "~> 0.10"
+  s.add_development_dependency "bundler", "~> 1.12"
+  s.add_development_dependency "rake", "~> 10.0"
+  s.add_development_dependency "rspec", "~> 3.0"
+  s.add_development_dependency "pry", "~> 0.10"
 end
