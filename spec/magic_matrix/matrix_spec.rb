@@ -11,31 +11,12 @@ describe MagicMatrix::Matrix do
     it "response to the method" do
       expect(action_matrix).to respond_to(:matrix)
     end
+
+    it "parses a YAML file" do
+      # expect(action_matrix.matrix["next_action"]["lef"]["generic"]["ver_a"]).to eq([ 'call', 'msg' ])
+      # expect(action_matrix.matrix.aaa).to be nil
+      expect(action_matrix.matrix.next_action.lef.generic.ver_a).to eq([ 'call', 'msg' ])
+      expect(action_matrix.matrix.next_action.lef).to eq('generic' => { 'ver_a' => [ 'call', 'msg' ], 'ver_b' => [ 'xxx', 'yyy' ] }, 'funnel' =>  [ 'zzz', 'ccc' ])
+    end
   end
-  # describe "#magic_hash" do
-  #   let(:action_matrix) { MagicMatrix::Matrix.new( test_yaml_path )}
-  #
-  #   it "initialize" do
-  #     MagicMatrix::Matrix.new( test_yaml_path )
-  #   end
-  #
-  #   it "response to the method" do
-  #     expect( action_matrix ).to respond_to( :matrix )
-  #   end
-  #
-  #   let(:matrix) { action_matrix.matrix }
-  #
-  #   it "response to the method as keys: " do
-  #     expect( matrix.next_action ).to include( "lef" )
-  #   end
-  # end
-
-  # describe '#matrix' do
-  #   let(:action_matrix) { MagicMatrix::Matrix.new( test_yaml_path )}
-  #
-  #   it '' do
-  #     expect(action_matrix.matrix.next_action.lef.generic.ver_a).to eq [ 'call', 'msg' ]
-  #   end
-  # end
-
 end

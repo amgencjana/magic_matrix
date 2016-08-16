@@ -12,8 +12,7 @@ module MagicMatrix
 
     def initialize(path)
       matrix_file = YAML.load_file(path)
-      @matrix = matrix_file
-      # @matrix = HashWrapper.new(matrix_file)
+      @matrix = Hashie::Mash.new(matrix_file)
     end
   end
 end
