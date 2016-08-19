@@ -8,7 +8,7 @@ describe MagicMatrix::Matrix do
       expect(action_matrix).to be_a(MagicMatrix::Matrix)
     end
 
-    it "response to the method" do
+    it "responds to `matrix`" do
       expect(action_matrix).to respond_to(:matrix)
     end
   end
@@ -21,8 +21,8 @@ describe MagicMatrix::Matrix do
     end
   end
 
-  describe "hash keys" do
-    it "behave as methods" do
+  describe "calling hash keys as methods" do
+    it "behaves like object methods" do
       expect(action_matrix.matrix.next_action.lef.generic.ver_a).to eq([ 'call', 'msg' ])
       expect(action_matrix.matrix.next_action.lef).to eq('generic' => { 'ver_a' => [ 'call', 'msg' ], 'ver_b' => [ 'xxx', 'yyy' ] }, 'funnel' =>  [ 'zzz', 'ccc' ])
     end
