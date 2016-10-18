@@ -1,11 +1,8 @@
-require_relative "magic_matrix/hash"
-require_relative "magic_matrix/matrix"
+require 'hashie'
+require 'magic_matrix/matrix'
 
 require 'pry'
-require 'active_support/core_ext/hash/indifferent_access'
 require 'yaml'
 
-module Magic
-  
-
+module MagicMatrix
 end
